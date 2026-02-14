@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "express": "^5.2.1",
+    "mongoose": "^9.2.1",
     "mysql2": "^3.17.1",
     "redis": "^5.10.0"
   }
