@@ -1,0 +1,8 @@
+
+
+services:
+  api:
+    build: ./api
+    container_name: notes-api
+    ports:
+      - "3000:3000"
