@@ -1,0 +1,32 @@
+name: Node Docker CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        cd api
+        npm install
+
+    - name: Build Docker Image
+      run: docker build -t notes-api ./api
+
+    - name: Run container and test
+      run: |
+        docker run -d -p 3000:3000 --name test notes-api
+        sleep 8
+        curl http://localhost:3000
