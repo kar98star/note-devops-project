@@ -1,4 +1,4 @@
-# Note DevOps Project
+# InfraNotes Project
 
 A Dockerized Node.js Notes API demonstrating a DevOps workflow with CI/CD.
 
